@@ -34,7 +34,9 @@ namespace Unit03.Game
                 DoUpdates();
                 DoOutputs();
             }
-            Console.WriteLine("Thanks for playing :)");
+            string word = _word.getWord();
+            _terminalService.WriteLine($"The word was: {word}");
+            _terminalService.WriteLine("Thanks for playing :)");
         }
 
         /// <summary>
