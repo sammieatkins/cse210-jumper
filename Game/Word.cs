@@ -33,12 +33,6 @@ namespace Unit03.Game
                 _hintList.Add(" _ ");
             }          
         }
-        // public string displayHint()
-        // {
-        //     string theWholeThing = String.Join(_hintList);
-        //     return theWholeThing;
-        // }
-
         public void displayHint()
         {
             foreach (string character in _hintList)
@@ -78,7 +72,6 @@ namespace Unit03.Game
         {
             return _word;
         }
-        
         public bool checkWin()
         {
             string underscore = " _ ";
