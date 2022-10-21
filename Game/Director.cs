@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace Unit02.Game
+namespace Unit03.Game
 {
     /// <summary>
     /// A person who directs the game. 
@@ -12,13 +12,9 @@ namespace Unit02.Game
     public class Director
     {
         bool _isPlaying = true;
+        private Word _word = new Word();
+        private Jumper _jumper = new Jumper();
         private TerminalService _terminalService = new TerminalService();
-        int _score = 0;
-        int _totalScore = 300;
-        Card card = new Card();
-        Card nextCard = new Card();
-        string guess = "";
-
 
         /// <summary>
         /// Constructs a new instance of Director.
@@ -37,15 +33,6 @@ namespace Unit02.Game
                 GetInputs();
                 DoUpdates();
                 DoOutputs();
-                if (_totalScore <= 0) {
-                    _isPlaying = false;
-                }
-                else {
-                    Console.Write("Play again? [y/n] ");
-                    string playAgain = Console.ReadLine();
-                    _isPlaying = (playAgain == "y");
-                }
-                
             }
             Console.WriteLine("Thanks for playing :)");
         }
@@ -55,9 +42,7 @@ namespace Unit02.Game
         /// </summary>
         public void GetInputs()
         {
-            Console.WriteLine($"The card is: {card.value} ");
-            Console.Write("Higher or lower? [h/l] ");
-            guess = Console.ReadLine();
+            _word.getGuess();
         }
 
         /// <summary>
@@ -65,30 +50,21 @@ namespace Unit02.Game
         /// </summary>
         public void DoUpdates()
         {
-            _score = 0;
-            string highLow = "";
-            if (card.value < nextCard.value) {
-                highLow = "h";
+            bool correct = _word.testGuess();
+            if (correct)
+            {
+                _word.updateHint();
             }
-            else if (card.value > nextCard.value) {
-                highLow = "l";
+            else
+            {
+                _jumper.updateJumper();
             }
-            else {
-                highLow = "t";
+            bool loss = _jumper.checkLoss();
+            bool win = _word.checkWin();
+            if (loss || win)
+            {
+                _isPlaying = false;
             }
-
-            if (highLow == guess) {
-                _score += 100;
-            }
-            else if (highLow != guess) {
-                _score -= 75;
-            }
-            else {
-                Console.WriteLine("AHHH");
-            }
-            _totalScore += _score;
-            card.value = nextCard.value;
-            nextCard.Draw();
         }
 
         /// <summary>
@@ -96,8 +72,8 @@ namespace Unit02.Game
         /// </summary>
         public void DoOutputs()
         {
-            Console.WriteLine($"Next card was: {card.value}");
-            Console.WriteLine($"Your score is: {_totalScore}");
+            _word.displayHint();
+            _jumper.displayJumper();
         }
     }
 }

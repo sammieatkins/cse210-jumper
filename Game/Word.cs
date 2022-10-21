@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace Unit02.Game
+namespace Unit03.Game
 {
     public class Word
     {
@@ -10,26 +10,37 @@ namespace Unit02.Game
         private int _length = 0;
         private List<string> _hintList = new List<string>();
         private string _guess = "";
+        private TerminalService _terminalService = new TerminalService();
 
         public Word()
         {
+            makeHint();
             displayHint();
         }
-        public string makeHint()
+        public void makeHint()
         {            
             for (int i = 0; i < _word.Length; i++)
             {
-                _hintList += " _ ";
+                _hintList.Add(" _ ");
             }          
         }
-        public string displayHint()
+        // public string displayHint()
+        // {
+        //     string theWholeThing = String.Join(_hintList);
+        //     return theWholeThing;
+        // }
+
+        public void displayHint()
         {
-            string theWholeThing = String.Join(_hintList);
-            return theWholeThing;
+            foreach (string character in _hintList)
+            {
+                _terminalService.WriteText(character);
+            }
         }
         public string getGuess()
         {   
-            _guess = TerminalService.ReadText("Guess a letter [a-z]: ");
+            _guess = _terminalService.ReadText("Guess a letter [a-z]: ");
+            return _guess;
         }
         public bool testGuess()
         {
@@ -42,12 +53,12 @@ namespace Unit02.Game
                 return false;
             }
         }
-        public string updateHint()
+        public void updateHint()
         {
             int count = 0;
-            foreach (string letter in _word)
+            foreach (char letter in _word)
             {
-                if (_guess.ToLower() == letter)
+                if (_guess.ToLower() == letter.ToString())
                 {
                     _hintList[count] = " " + letter + " ";
                 }
@@ -57,6 +68,19 @@ namespace Unit02.Game
         public string getWord()
         {
             return _word;
+        }
+        
+        public bool checkWin()
+        {
+            string underscore = " _ ";
+            if (_hintList.Contains(underscore))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

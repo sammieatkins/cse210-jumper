@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 
 
-namespace Unit02.Game
+namespace Unit03.Game
 {
     public class Jumper
     {
         private List<string> _jumper = new List<string>();
+        private TerminalService _terminalService = new TerminalService();
         
         public Jumper()
         {
@@ -25,14 +26,32 @@ namespace Unit02.Game
         }
         public void updateJumper()
         {
-            _jumper.Remove();
+            if (_jumper[0] == "  O  ")
+            {
+                _jumper[0] = "  X  ";
+            }
+            else 
+            {
+                _jumper.RemoveAt(0);
+            }
         }
-        public string displayJumper()
+        public bool checkLoss()
         {
-            TerminalService.WriteText("");
-            TerminalService.WriteText("");
+            if (_jumper[0] == "  X  ")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public void displayJumper()
+        {
+            _terminalService.WriteLine("");
+            _terminalService.WriteLine("");
             foreach (string line in _jumper) {
-                TerminalService.WriteText(line);
+                _terminalService.WriteLine(line);
             }   
         }
     }

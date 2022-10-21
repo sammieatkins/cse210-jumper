@@ -1,0 +1,15 @@
+/Users/sammie/git/cse210-jumper/obj/Debug/net6.0/cse210-jumper.csproj.AssemblyReference.cache
+/Users/sammie/git/cse210-jumper/obj/Debug/net6.0/cse210-jumper.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sammie/git/cse210-jumper/obj/Debug/net6.0/cse210-jumper.AssemblyInfoInputs.cache
+/Users/sammie/git/cse210-jumper/obj/Debug/net6.0/cse210-jumper.AssemblyInfo.cs
+/Users/sammie/git/cse210-jumper/obj/Debug/net6.0/cse210-jumper.csproj.CoreCompileInputs.cache
+/Users/sammie/git/cse210-jumper/bin/Debug/net6.0/cse210-jumper
+/Users/sammie/git/cse210-jumper/bin/Debug/net6.0/cse210-jumper.deps.json
+/Users/sammie/git/cse210-jumper/bin/Debug/net6.0/cse210-jumper.runtimeconfig.json
+/Users/sammie/git/cse210-jumper/bin/Debug/net6.0/cse210-jumper.dll
+/Users/sammie/git/cse210-jumper/bin/Debug/net6.0/cse210-jumper.pdb
+/Users/sammie/git/cse210-jumper/obj/Debug/net6.0/cse210-jumper.dll
+/Users/sammie/git/cse210-jumper/obj/Debug/net6.0/refint/cse210-jumper.dll
+/Users/sammie/git/cse210-jumper/obj/Debug/net6.0/cse210-jumper.pdb
+/Users/sammie/git/cse210-jumper/obj/Debug/net6.0/cse210-jumper.genruntimeconfig.cache
+/Users/sammie/git/cse210-jumper/obj/Debug/net6.0/ref/cse210-jumper.dll

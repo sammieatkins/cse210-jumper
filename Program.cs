@@ -1,6 +1,6 @@
-using Unit02.Game;
+﻿using Unit03.Game;
 
-namespace Unit02
+namespace Unit03
 {
     /// <summary>
     /// The program's entry point.
@@ -10,7 +10,7 @@ namespace Unit02
         /// <summary>
         /// Starts the program using the given arguments.
         /// </summary>
-        /// <param name="args">The given arguments.</param>
+        // / <param name="args">The given arguments.</param>
         static int Main(string[] args)
         {
             Director director = new Director();

@@ -1,7 +1,7 @@
 using System;
 
 
-namespace Unit02.Game
+namespace Unit03.Game
 {
     /// <summary>
     /// <para>A service that handles terminal operations.</para>
@@ -45,9 +45,13 @@ namespace Unit02.Game
         /// Displays the given text on the terminal. 
         /// </summary>
         /// <param name="text">The given text.</param>
-        public void WriteText(string text)
+        public void WriteLine(string text)
         {
             Console.WriteLine(text);
+        }
+        public void WriteText(string text)
+        {
+            Console.Write(text);
         }
     }
 }
