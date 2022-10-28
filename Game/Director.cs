@@ -24,7 +24,7 @@ namespace Unit03.Game
         }
 
         /// <summary>
-        /// Starts the game by running the main game loop.
+        /// Starts the game by running the main game loop. Handles ending game displays. 
         /// </summary>
         public void StartGame()
         {
@@ -40,7 +40,7 @@ namespace Unit03.Game
         }
 
         /// <summary>
-        /// Asks the user if they think the next card will be higher or lower than the one displayed.
+        /// Calls the getGuess function from the Word class, which asks the user to guess a letter. Returns a string. 
         /// </summary>
         public void GetInputs()
         {
@@ -48,7 +48,7 @@ namespace Unit03.Game
         }
 
         /// <summary>
-        /// Updates the player's score.
+        /// Checks if the letter was in the word. If yes, it updates the hint to reflect this. If no, it removes part of the parachute. Also checks for if the game was won. 
         /// </summary>
         public void DoUpdates()
         {
@@ -70,7 +70,7 @@ namespace Unit03.Game
         }
 
         /// <summary>
-        /// Displays the card value and the score. 
+        /// Displays the updated hint and updated jumper. 
         /// </summary>
         public void DoOutputs()
         {
